@@ -1,0 +1,143 @@
+@import '../common/colors';
+
+.header {
+    &__logo{
+        width: 120px;
+        height: 25px;
+        background-image: url('/resources/images/logo.png');
+        margin-left: 120px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        background-image: url('/resources/images/bg_large.png');
+        height: 500px;
+    }
+
+    &__title {
+        color: $base-white;
+        font-size: 46px;
+        line-height: 28px;
+        padding-top: 120px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        color: $base-white;
+        font-size: 16px;
+        line-height: 32px;
+        margin-top: 22px;
+        text-align: center;
+    }
+
+    &__form {
+        margin: 48px auto auto;
+        width: 621px;
+    }
+
+    .search-form {
+        &__input-line {
+            margin-bottom: 20px;
+
+            &_flex {
+                display: flex;
+            }
+        }
+
+        &__search {
+            width: 621px;
+            height: 45px;
+            background: $base-white;
+            border: 1px solid $base-white;
+            border-radius: 2px;
+            font-size: 15px;
+            line-height: 32px;
+            padding-left: 16px;
+            box-sizing: border-box;
+        }
+
+        &__search-icon {
+            width: 15px;
+            height: 16px;
+            top: 13px;
+            right: 14px;
+            background-image: url('/resources/images/search-ico.png');
+            background-size: cover;
+            position: absolute;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .input-wrap {
+        &_header-transparent {
+            display: flex;
+            margin-right: 12px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .select2-container {
+                display: inline-flex;
+                height: 38px;
+                background: rgba(0, 0, 0, 0.0001);
+                border: 2px solid #FFFFFF;
+                border-radius: 5px;
+
+                .selection {
+                    width: 100%;
+                    font-size: 13px;
+                }
+
+                .select2-selection {
+                    background-color: transparent;
+                    border: none;
+
+                    &__rendered {
+                        padding-left: 12px;
+                    }
+
+                    &__placeholder {
+                        color: $base-white
+                    }
+                }
+
+                .select2-selection__arrow b {
+                    border-color: $base-white transparent transparent transparent;
+                }
+
+                &--open {
+
+                    .select2-selection {
+
+                        &--single {
+                            .select2-selection__arrow b {
+                                border-color: transparent transparent $base-white transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &_header-twice {
+            width: 400px;
+
+            .select2-container {
+                //todo
+                &:first-child {
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                }
+
+                &:last-child {
+                    border-left: 0;
+                }
+            }
+        }
+    }
+}

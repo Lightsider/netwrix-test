@@ -1,0 +1,118 @@
+@import '../common/colors';
+
+.partner-list-container {
+    width: 100%;
+    background-color: #F3F4FA;
+}
+
+.partner-list {
+    padding-top: 53px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+
+    &__item {
+        background-color: $base-white;
+        width: 1100px;
+        min-height: 145px;
+        display: inline-flex;
+        margin: auto auto 20px;
+
+        .partner-list-item-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            color: $gray100;
+
+            &__logo-container {
+                width: 250px;
+                height: 100%;
+                display: inline-flex;
+                justify-content: center;
+            }
+
+            &__logo-img {
+                margin: auto;
+                width: 96px;
+                height: 77px;
+                background-image: url('/resources/images/default_partner.png');
+                background-size: cover;
+            }
+
+            &__info-container {
+                width: 486px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            &__info-title {
+                font-size: 21px;
+                line-height: 32px;
+                color: $gray100;
+                font-weight: bold;
+                margin-bottom: 13.5px;
+                width: 366px;
+            }
+
+            &__info-description {
+                font-size: 14px;
+                line-height: 24px;
+                color: $gray100;
+                width: 423px;
+            }
+
+            &__contacts-container {
+                width: 149px;
+                height: 58px;
+                border-right: 1px $gray10 solid;
+                margin-top: 39px;
+            }
+
+            &__info-link {
+                text-decoration: none;
+                font-weight: normal;
+
+                &_phone {
+                    font-size: 14px;
+                    color: $gray100;
+                }
+
+                &_website {
+                    color: $primaryBlue;
+                    font-size: 13px;
+                }
+            }
+
+            &__contacts-website {
+                font-size: 21px;
+                line-height: 32px;
+                font-weight: bold;
+                margin-bottom: 5.5px;
+            }
+
+            &__contacts-description {
+                font-size: 14px;
+                line-height: 24px;
+                color: $gray100;
+            }
+
+            &__company-container {
+                height: 58px;
+                margin-top: 39px;
+                margin-left: 48px;
+            }
+
+            &__company-name {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 32px;
+                color: $gray100;
+            }
+        }
+    }
+}

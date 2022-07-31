@@ -1,0 +1,10 @@
+@import "select2";
+@import "body";
+$base-white: #FFFFFF;
+
+
+.input-wrap {
+    &_relative {
+        position: relative;
+    }
+}
