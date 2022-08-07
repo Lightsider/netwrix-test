@@ -1,10 +1,13 @@
-@import "select2";
+@import "~select2/dist/css/select2.css";
 @import "body";
 $base-white: #FFFFFF;
-
 
 .input-wrap {
     &_relative {
         position: relative;
     }
+}
+
+br {
+    display: none;
 }

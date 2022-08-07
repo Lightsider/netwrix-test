@@ -3,7 +3,12 @@
     @import 'body.scss';
 
     .main-container {
-        width: 100%;
+        width: 1600px;
         height: 30%;
+    }
+
+    .br_desktop
+    {
+        display: inherit;
     }
 }

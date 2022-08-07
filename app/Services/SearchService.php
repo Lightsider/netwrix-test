@@ -58,7 +58,9 @@ class SearchService
         $filters = (new SearchQueryFilter($request))->getFilters();
 
         foreach ($filters as $currentFilter) {
-            $query = $currentFilter->filter($query);
+            $query = $query->where(function ($query) use ($currentFilter) {
+                $currentFilter->filter($query);
+            });
         }
 
         return $query->get();
@@ -71,8 +73,8 @@ class SearchService
     private function getParams(SearchQueryRequest $request): SearchParamsDTO
     {
         return new SearchParamsDTO(
-            $this->typesRepository->getList(new TypesFilter($request->type)),
-            $this->locCountryRepository->getList(new CountryFilter($request->countryCode)),
+            $this->typesRepository->getList(),
+            $this->locCountryRepository->getList(),
             $this->locStateRepository->getList(new StateFilter($request->stateCode, $request->countryCode)),
         );
     }

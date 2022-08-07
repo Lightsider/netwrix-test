@@ -4,14 +4,14 @@
     &__logo{
         width: 120px;
         height: 25px;
-        background-image: url('/resources/images/logo.png');
+        background-image: url('../../../images/logo.png');
         margin-left: 120px;
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
     &__content {
-        background-image: url('/resources/images/bg_large.png');
+        background-image: url('../../../images/bg_large.png');
         height: 500px;
     }
 
@@ -22,6 +22,10 @@
         padding-top: 120px;
         text-align: center;
         font-weight: bold;
+
+        br {
+            display: none;
+        }
     }
 
     &__subtitle {
@@ -63,7 +67,7 @@
             height: 16px;
             top: 13px;
             right: 14px;
-            background-image: url('/resources/images/search-ico.png');
+            background-image: url('../../../images/search-ico.png');
             background-size: cover;
             position: absolute;
             background-color: transparent;
@@ -99,6 +103,7 @@
 
                     &__rendered {
                         padding-left: 12px;
+                        color: $base-white
                     }
 
                     &__placeholder {

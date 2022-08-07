@@ -19,15 +19,17 @@ abstract class AbstractTableRecordsListEntitiesRepository implements ListEntitie
     }
 
     /**
-     * @param AbstractFilter $filter
+     * @param ?AbstractFilter $filter
      * @return Collection
      */
-    public function getList(AbstractFilter $filter): Collection
+    public function getList(?AbstractFilter $filter = null): Collection
     {
         $query = $this->model::query();
 
-        foreach ($filter->getFilters() as $currentFilter) {
-            $query = $currentFilter->filter($query);
+        if (!empty($filter)) {
+            foreach ($filter->getFilters() as $currentFilter) {
+                $query = $currentFilter->filter($query);
+            }
         }
 
         return $this->extractor->fromCollection(

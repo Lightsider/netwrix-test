@@ -18,16 +18,18 @@ final class TypesListEntitiesRepository implements ListEntitiesRepositoryInterfa
     }
 
     /**
-     * @param AbstractFilter $filter
+     * @param ?AbstractFilter $filter
      * @return Collection
      */
-    public function getList(AbstractFilter $filter): Collection
+    public function getList(?AbstractFilter $filter = null): Collection
     {
         $query = DB::table('partner_locator')
                 ->select('status');
 
-        foreach ($filter->getFilters() as $currentFilter) {
-            $query = $currentFilter->filter($query);
+        if (!empty($filter)) {
+            foreach ($filter->getFilters() as $currentFilter) {
+                $query = $currentFilter->filter($query);
+            }
         }
 
         return $this->extractor->fromCollection(
